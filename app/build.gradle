@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.google.android.gms.samples.wallet"
+        applicationId "com.mundipagg.testapp"
 
         // Google Payment API is not supported in SDK versions lower than 19
         minSdkVersion 19

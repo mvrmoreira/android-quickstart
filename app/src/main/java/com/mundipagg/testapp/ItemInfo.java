@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.gms.samples.wallet;
+package com.mundipagg.testapp;
 
 /**
  * Used for storing the (hard coded) info about the item we're selling.

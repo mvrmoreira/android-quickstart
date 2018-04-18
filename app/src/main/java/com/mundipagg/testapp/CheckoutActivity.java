@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.android.gms.samples.wallet;
+package com.mundipagg.testapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,19 +46,19 @@ public class CheckoutActivity extends Activity {
     private View mGooglePayButton;
     private TextView mGooglePayStatusText;
 
-    private ItemInfo mBikeItem = new ItemInfo("Simple Bike", 300 * 1000000, R.drawable.bike);
+    private ItemInfo mBikeItem = new ItemInfo("Simple Bike", 300 * 1000000, com.mundipagg.testapp.R.drawable.bike);
     private long mShippingCost = 90 * 1000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+        setContentView(com.mundipagg.testapp.R.layout.activity_checkout);
 
         // Set up the mock information for our item in the UI.
         initItemUI();
 
-        mGooglePayButton = findViewById(R.id.googlepay_button);
-        mGooglePayStatusText = findViewById(R.id.googlepay_status);
+        mGooglePayButton = findViewById(com.mundipagg.testapp.R.id.googlepay_button);
+        mGooglePayStatusText = findViewById(com.mundipagg.testapp.R.id.googlepay_status);
 
         mGooglePayButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +98,7 @@ public class CheckoutActivity extends Activity {
             mGooglePayStatusText.setVisibility(View.GONE);
             mGooglePayButton.setVisibility(View.VISIBLE);
         } else {
-            mGooglePayStatusText.setText(R.string.googlepay_status_unavailable);
+            mGooglePayStatusText.setText(com.mundipagg.testapp.R.string.googlepay_status_unavailable);
         }
     }
 
@@ -151,10 +150,11 @@ public class CheckoutActivity extends Activity {
             }
 
             String billingName = paymentData.getCardInfo().getBillingAddress().getName();
-            Toast.makeText(this, getString(R.string.payments_show_name, billingName), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(com.mundipagg.testapp.R.string.payments_show_name, billingName), Toast.LENGTH_LONG).show();
 
             // Use token.getToken() to get the token string.
-            Log.d("PaymentData", "PaymentMethodToken received");
+            //Log.d("PaymentData", "PaymentMethodToken received");
+            Log.d("GooglePaymentToken", token.getToken());
         }
     }
 
@@ -186,9 +186,9 @@ public class CheckoutActivity extends Activity {
     }
 
     private void initItemUI() {
-        TextView itemName = findViewById(R.id.text_item_name);
-        ImageView itemImage = findViewById(R.id.image_item_image);
-        TextView itemPrice = findViewById(R.id.text_item_price);
+        TextView itemName = findViewById(com.mundipagg.testapp.R.id.text_item_name);
+        ImageView itemImage = findViewById(com.mundipagg.testapp.R.id.image_item_image);
+        TextView itemPrice = findViewById(com.mundipagg.testapp.R.id.text_item_price);
 
         itemName.setText(mBikeItem.getName());
         itemImage.setImageResource(mBikeItem.getImageResourceId());

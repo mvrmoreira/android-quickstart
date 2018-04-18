@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.gms.samples.wallet;
+package com.mundipagg.testapp;
 
 import android.util.Pair;
 
@@ -66,31 +66,30 @@ public class Constants {
     );
 
     // Required by the API, but not visible to the user.
-    public static final String CURRENCY_CODE = "USD";
+    public static final String CURRENCY_CODE = "BRL";
 
     // Supported countries for shipping (use ISO 3166-1 alpha-2 country codes).
     // Relevant only when requesting a shipping address.
     public static final List<String> SHIPPING_SUPPORTED_COUNTRIES = Arrays.asList(
-            "US",
-            "GB"
+            "BR"
     );
 
     // The name of your payment processor / gateway. Please refer to their documentation for
     // more information.
-    public static final String GATEWAY_TOKENIZATION_NAME = "example";
+    public static final String GATEWAY_TOKENIZATION_NAME = "mundipagg";
 
     // Custom parameters required by the processor / gateway.
     // In many cases, your processor / gateway will only require a gatewayMerchantId.
     // Please refer to your processor's documentation for more information. The number of parameters
     // required and their names vary depending on the processor.
     public static final List<Pair<String, String>> GATEWAY_TOKENIZATION_PARAMETERS = Arrays.asList(
-            Pair.create("gatewayMerchantId", "exampleGatewayMerchantId")
+            Pair.create("gatewayMerchantId", "994b63c0-4257-11e8-842f-0ed5f89f718b")
 
             // Your processor may require additional parameters.
     );
 
     // Only used for DIRECT tokenization. Can be removed when using GATEWAY tokenization.
-    public static final String DIRECT_TOKENIZATION_PUBLIC_KEY = "REPLACE_ME";
+    public static final String DIRECT_TOKENIZATION_PUBLIC_KEY = "BILGiAFe873+qP2aZ95qOupKuK3J3eWQw1IaAwFTYOpZTusu+hY7LRfNvE147fG+LM++ZT48goExm+hdY3TnO5A=";
 
     private Constants() {
     }

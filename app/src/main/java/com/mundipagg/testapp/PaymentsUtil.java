@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.gms.samples.wallet;
+package com.mundipagg.testapp;
 
 import android.app.Activity;
 import android.util.Pair;
@@ -106,7 +106,7 @@ public class PaymentsUtil {
                 PaymentDataRequest.newBuilder()
                         .setPhoneNumberRequired(false)
                         .setEmailRequired(true)
-                        .setShippingAddressRequired(true)
+                        .setShippingAddressRequired(false)
 
                         // Omitting ShippingAddressRequirements all together means all countries are
                         // supported.
@@ -121,7 +121,7 @@ public class PaymentsUtil {
                                 CardRequirements.newBuilder()
                                         .addAllowedCardNetworks(Constants.SUPPORTED_NETWORKS)
                                         .setAllowPrepaidCards(true)
-                                        .setBillingAddressRequired(true)
+                                        .setBillingAddressRequired(false)
 
                                         // Omitting this parameter will result in the API returning
                                         // only a "minimal" billing address (post code only).
